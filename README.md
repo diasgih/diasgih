@@ -1,16 +1,24 @@
 ## Hi 👋
 
-<!--
-**diasgih/diasgih** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+// Array de objetos representando alunos e suas notas
+const alunos = [
+  { nome: 'Ana', notas: [8, 9, 7, 6] },
+  { nome: 'João', notas: [5, 7, 8, 6] },
+  { nome: 'Carlos', notas: [9, 8, 9, 10] },
+  { nome: 'Bianca', notas: [7, 8, 6, 7] }
+];
 
-Here are some ideas to get you started:
+// Função para calcular a média
+const calcularMedia = (notas) => {
+  let soma = 0;
+  notas.forEach((nota) => {
+    soma += nota;
+  });
+  return soma / notas.length;
+};
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+// Usando forEach para percorrer a lista de alunos e mostrar o nome e a média de cada um
+alunos.forEach((aluno) => {
+  const media = calcularMedia(aluno.notas);
+  console.log(`Aluno: ${aluno.nome} | Média: ${media.toFixed(2)}`);
+});
